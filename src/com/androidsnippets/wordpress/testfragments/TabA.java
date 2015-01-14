@@ -16,6 +16,7 @@ public class TabA extends MyBaseFragmentActivity
 	   FragmentA1 fragmentA1 = new FragmentA1(R.layout.fragment_layout_a1);
 	   Bundle bundle = new Bundle();
 	   bundle.putString("hi", "asdasd");
+	   bundle.putInt("fragmentLayoutId", R.layout.fragment_layout_a1);
 	   fragmentA1.setArguments(bundle);
 	   
 	   navigateTo(fragmentA1,fragmentA1.getClass().getSimpleName());
