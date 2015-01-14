@@ -48,7 +48,12 @@ public class FragmentB1 extends MyBaseFragment
 			@Override
 			public void onClick(View v) 
 			{
-				createNewFragment(new FragmentB2(R.layout.fragment_layout_b2));
+				//createNewFragment(new FragmentB2(R.layout.fragment_layout_b2));
+                FragmentB2 fragmentB2 = new FragmentB2(R.layout.fragment_layout_b2);
+                Bundle bundle = new Bundle();
+                bundle.putInt("fragmentLayoutId", R.layout.fragment_layout_b2);
+                fragmentB2.setArguments(bundle);
+                createNewFragment(fragmentB2);
 			}
 		});
 		
@@ -59,7 +64,8 @@ public class FragmentB1 extends MyBaseFragment
 	public void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
-	    bundle = getArguments();
+        bundle = getArguments();
+        layout_to_inflate = bundle.getInt("fragmentLayoutId");
 	}
 	
 	@Override

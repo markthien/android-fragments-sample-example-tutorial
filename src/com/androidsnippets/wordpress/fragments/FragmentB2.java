@@ -79,7 +79,8 @@ public class FragmentB2 extends MyBaseFragment
 	public void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
-	    bundle = getArguments();
+        bundle = getArguments();
+        layout_to_inflate = bundle.getInt("fragmentLayoutId");
 	}
 	
 	@Override

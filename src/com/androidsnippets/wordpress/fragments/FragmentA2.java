@@ -46,7 +46,13 @@ public class FragmentA2 extends MyBaseFragment
 			@Override
 			public void onClick(View v) 
 			{
-				createNewFragment(new FragmentA3(R.layout.fragment_layout_a3));
+				//createNewFragment(new FragmentA3(R.layout.fragment_layout_a3));
+
+                FragmentA3 fragmentA3 = new FragmentA3(R.layout.fragment_layout_a3);
+                Bundle bundle = new Bundle();
+                bundle.putInt("fragmentLayoutId", R.layout.fragment_layout_a3);
+                fragmentA3.setArguments(bundle);
+                createNewFragment(fragmentA3);
 			}
 		});
 	    
